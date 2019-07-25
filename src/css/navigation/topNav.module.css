@@ -1,0 +1,43 @@
+.mainContainer {
+	background-color: var(--brand-background);
+}
+
+.container {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: var(--top-nav-padding) 0;
+	height: var(--top-nav-height);
+
+	background-color: var(--brand-background);
+}
+
+.logoLink {
+	display: block;
+
+	width: 20%;
+	min-width: 24px;
+	max-width: 64px;
+	height: 100%;
+}
+
+.logo {
+	width: 20%;
+	min-width: 24px;
+	max-width: 64px;
+}
+
+.navMenu {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.navMenu a {
+	margin: 0 16px;
+
+	color: var(--main-font-color);
+	font-size: 1.5em;
+}

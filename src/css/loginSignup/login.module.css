@@ -1,0 +1,50 @@
+.container {
+	box-sizing: border-box;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	justify-content: space-around;
+
+	height: calc(100vh - calc(var(--top-nav-height) + 2 * var(--top-nav-padding)));
+}
+
+.loginImage {
+	width: 100%;
+}
+
+.card {
+	box-sizing: border-box;
+
+	width: 80%;
+	max-width: calc(var(--desktop-site-width) / 2 - 200px);
+	margin: 0 auto;
+	padding: 2em;
+
+	/* text-align: center; */
+}
+
+.form {
+	margin: 1em auto 2em;
+}
+
+.formField > div {
+	width: 100%;
+}
+
+.formButtons {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+
+	margin: 1em auto;
+}
+
+.formButtons button {
+	margin: 0 1em;
+}
+
+.submitButton span {
+	color: white;
+}

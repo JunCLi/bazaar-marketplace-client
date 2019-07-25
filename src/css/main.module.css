@@ -1,0 +1,9 @@
+.container {
+	width: 100%;
+	max-width: var(--desktop-site-width);
+	margin: 0 auto;
+}
+
+.background {
+	background-color: var(--main-background);
+}

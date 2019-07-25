@@ -1,8 +1,16 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { useQuery } from 'react-apollo-hooks'
 import { AUTHENTICATION } from './gql/util/authenticationQuery'
+
+import NonAuthTopNav from './components/navigation/NonAuthTopNav'
+
+import Home from './components/home/Home'
+import Error404 from './components/404/Error404'
+
+import Login from './components/loginSignup/LoginSignup'
+
 
 const AppRouter = () => {
 	const { data, loading, error, refetch } = useQuery(AUTHENTICATION)
@@ -22,16 +30,28 @@ const AppRouter = () => {
 	// if (error.message === 'GraphQL error: jwt must be provided') {
 
 	// } else 
-	if ( error) {
+	if (error) {
 		return (
-			<div>Error...</div>
+			<>
+				<Router>
+					<NonAuthTopNav />
+					<Switch>
+						<Route path='/' exact component={Home} />
+						<Route path='/login' exact component={Login} />
+						<Route component={Error404} />
+					</Switch>
+				</Router>
+			</>
 		)
 	}
 	
 
 	return (
 		<Router>
-			hi
+			<Switch>
+				<Route path='/' exact component={Home} />
+				<Route component={Error404} />
+			</Switch>
 		</Router>
 	)
 }

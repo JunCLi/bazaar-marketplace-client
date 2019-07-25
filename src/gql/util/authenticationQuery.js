@@ -1,11 +1,12 @@
 import gql from 'graphql-tag'
 
-export const AUTHENTICATION = gql `
+export const AUTHENTICATION = gql`
 	query {
 		getUser {
 			id
 			email
-			fullname
+			first_name
+			last_name
 		}
 	}
 `
